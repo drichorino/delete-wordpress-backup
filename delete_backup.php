@@ -16,10 +16,10 @@ $dates = [];
 foreach ($files as $file) {	
     if (preg_match("/^.*\.zip$/", $file)) {
 		// Use a regular expression to extract the date from the string
-		preg_match("/^backup_(\d{4}-\d{2}-\d{2})/", $file, $matches);
+		$datetime = substr($file, 7, 15);
 
 		// Push to array of dates
-		array_push($dates,$matches[1]);
+		array_push($dates,$datetime);
     }		
 }
 
